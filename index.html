@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Getting some input </title>
+        <meta charset="UTF-8">
+        <script src="scripts/main.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div>
+        <h1 id="sql_h">Escolha de filtros</h1>
+        <p id="filtros"></p>
+        <script>
+            for (let idx in filter) {
+                getQuery(filter[idx],idx);
+            }
+            var cmd = `select * <br> from db <br> where value > ${args["valor mínimo"]} and city = '${args["cidade"]}' and date between '${args["data de início"]} 00:00:00' and '${args["data de fim"]} 23:59:00' <br> order by value desc;`;
+        </script>
+        </div>
+        <div>
+        <h1 id="sql_h"> SQL Query </h1>
+        <p id="sql_cmd"></p>
+        <script>
+            document.getElementById("sql_cmd").innerHTML += cmd;
+        </script>
+        </div>
+    </body>
+</html>
