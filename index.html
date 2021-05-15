@@ -14,7 +14,7 @@
             for (let idx in filter) {
                 getQuery(filter[idx],idx);
             }
-            var cmd = `select * <br> from db <br> where value > ${args["valor mínimo"]} and city = '${args["cidade"]}' and date between '${args["data de início"]} 00:00:00' and '${args["data de fim"]} 23:59:00' <br> order by value desc;`;
+            var cmd = `select * <br> from users <br> where value > ${args["valor mínimo"]} and city = '${args["cidade"]}' and data between '${args["data de início"]}' and '${args["data de fim"]}' <br> order by value desc;`;
         </script>
         </div>
         <div>
